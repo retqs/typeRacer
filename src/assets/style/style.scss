@@ -1,0 +1,166 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.wrapper {
+  height: 100vh;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  height: 60%;
+  width: 65%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  background: rgb(255, 248, 251);
+  // padding: 30px;
+
+  &__progress {
+    width: 80%;
+    height: 1.1rem;
+  }
+
+  &__text {
+    // height: 80%;
+    width: 80%;
+
+    font-size: 1.4rem;
+    font-weight: 300;
+    display: flex;
+    flex-wrap: wrap;
+    // margin: 9rem 0;
+
+    .word {
+      margin: 2px;
+    }
+  }
+
+  &__input {
+    width: 80%;
+    height: 40px;
+    outline: none;
+    font-size: 1.4rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    padding: 0 3px;
+  }
+
+  &__modalTitle {
+    margin: 2rem;
+    font-size: 1.5rem;
+  }
+
+  &__playAgainBtn {
+    padding: 5px 10px;
+    border: none;
+    background: #333;
+    color: #c2c2c2;
+    font-size: 1.8rem;
+    outline: none;
+    height: 50px;
+    width: 300px;
+    transition: all 0.2s;
+    &:hover {
+      background: rgb(255, 248, 251);
+      color: #000;
+    }
+  }
+}
+
+.green {
+  color: rgb(136, 255, 0);
+}
+
+.red {
+  background-color: rgba(255, 0, 0, 0.5);
+}
+
+.underline {
+  border-bottom: 1px solid #000;
+}
+
+.wpm {
+  position: absolute;
+  top: 5rem;
+  right: 5rem;
+  font-size: 2rem;
+  color: #fff;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 2px #ce5937;
+}
+
+.newText {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+
+  text-transform: capitalize;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  outline: none;
+
+  cursor: pointer;
+  &:active {
+    color: rgb(168, 45, 206);
+  }
+}
+
+.animationLoading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100px;
+  display: flex;
+  align-items: center;
+
+  span {
+    font-size: 2rem;
+    &:nth-child(odd) {
+      animation: up 0.4s ease-in-out infinite;
+    }
+    &:nth-child(even) {
+      animation: down 0.4s ease-in-out infinite;
+    }
+  }
+}
+
+@keyframes up {
+  0% {
+    transform: translateY(-5px);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+  100% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes down {
+  0% {
+    transform: translateY(6px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(6px);
+  }
+}
